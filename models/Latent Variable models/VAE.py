@@ -131,11 +131,12 @@ gamma = 0.1
 
 # Configure training and testing sets 
 
-test_mslub_path = './data/MSLUB_Flair_2c.npy'
-test_brats_path = './data/BraTS_Flair_2c.npy'
+test_mslub_path = './data/MSLUB/*_2c.npy'
+test_brats_path = './data/BraTS/*_2c.npy'
 
 
-data_dir  = './data/OASIS_adv/'
+data_dir  = './data/OASIS/adv_oasis/'
+# It is better to split our '.npy' file into 71 '.npy' files of 256 batches 
 train_paths = list_of_paths(data_dir)
 
 nb_train_files = 66
@@ -147,12 +148,11 @@ val_gen = data_generator_2c(train_paths[-nb_val_files:], batch_size)
 validation_steps = (256 / batch_size) * nb_val_files
 
 
-ckpts_dir = './saved/VAE_adv/'     
-ckpts_path = os.path.join(ckpts_dir, 'Model_Ckpts.h5')
-fig_path = os.path.join(ckpts_dir, 'History_plot.png')
-predicted_oasis_path = os.path.join(ckpts_dir, 'Predicted_oasis.npy')
-predicted_mslub_path = os.path.join(ckpts_dir, 'Predicted_mslub.npy')
-predicted_brats_path = os.path.join(ckpts_dir, 'Predicted_brats.npy')
+save_dir = './saved/VAE/'   
+ckpts_path = os.path.join(save_dir, 'ckpt/Model_Ckpts.h5')
+fig_path = os.path.join(save_dir, 'ckpt/History_plot.png')
+predicted_mslub_path = os.path.join(save_dir, 'Predicted/mslub/Predicted_mslub.npy')
+predicted_brats_path = os.path.join(save_dir, 'Predicted/brats/Predicted_brats.npy')
 
 
       
@@ -164,7 +164,8 @@ tqdm_callback = tfa.callbacks.TQDMProgressBar()
 
 model = VAE()
 model.summary()
-#model.load_weights('./saved/VAE/ckpt/Model_Ckpts_2.h5')
+#model.load_weights('./saved/VAE/ckpt/Model_Ckpts.h5')
+
 
 # Print & Write model Parameters
 parameters = (f'\nSelected model "{model_name}" with :\n - {batch_size}: Batche(s)\n - {numEpochs}: Epochs\n - {intermediate_dim}: Bottelneck size\n')
@@ -192,7 +193,6 @@ time.sleep(2)
 
 #-- Load Test-sets       
 print('\nLoad Test-sets ===>\n')
-oasis_test_2c = np.load(test_oasis_path)
 mslub_test_2c = np.load(test_mslub_path)
 brats_test_2c = np.load(test_brats_path)
 
