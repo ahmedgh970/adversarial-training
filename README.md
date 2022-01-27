@@ -36,7 +36,7 @@ pip3 install -r requirements.txt
   ├── data/
   │   └── data.txt  - datasets descriptions and download link
   │
-  ├── models/ - Models defining, training and evaluating
+  ├── models/ - Models defining and training
   │   └── Autoencoders/
   │       └── DCAE.py
   │   └── Latent Variable models/
@@ -44,9 +44,12 @@ pip3 install -r requirements.txt
   │
   ├── saved/  - saving folder
   │
-  └── scripts/ - small utility scripts
-      ├── utils.py
-      └── adversarial_crafting.py    
+  └── scripts/ - utility scripts for evaluation and adversarial crafting
+      ├── adversarial_crafting.py
+      ├── eval_brats.py
+      ├── eval_mslub.py
+      ├── ...
+      └── utils.py
   ```
 
 
@@ -54,7 +57,7 @@ pip3 install -r requirements.txt
 All the preprocessed datasets that we utilized are available on this drive link: https://drive.google.com/file/d/11Bj7ATQtxLt7PyL3fqyyeXqNNrRqgS9K/view?usp=sharing
 
 ### CLI Usage
-Every model can be trained and tested individually using the scripts which are provided in the `models/*` folders.
+Every model can be trained and evaluated individually using the scripts which are provided in the `models/*` and `scripts/*` folders.
 
 ### Google Colab Usage
 Training can be started by importing `Autoencoders_Adversarial_Training_UAD.ipynb` in [Google Colab](http://colab.research.google.com).
