@@ -61,6 +61,16 @@ Training can be started by importing `Autoencoders_Adversarial_Training_UAD.ipyn
 This github repository is linked and can directly loaded into the notebook. However, the datasets have to be stored so that Google Colab can access them. 
 Either uploading by a zip-file or uploading it to Google Drive and mounting the drive.
 
+## Adversarial Robustness Toolbox Installation
+The most recent version of ART can be downloaded or cloned from this repository:
+```
+git clone https://github.com/Trusted-AI/adversarial-robustness-toolbox
+```
+Install ART with the following command from the project folder adversarial-robustness-toolbox:
+Using pip:
+```
+pip install .
+```
 
 ## Disclaimer
 Please do not hesitate to open an issue to inform of any problem you may find within this repository.
