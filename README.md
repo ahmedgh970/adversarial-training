@@ -33,18 +33,20 @@ pip3 install -r requirements.txt
   │
   ├── Autoencoders_Adversarial_Training_UAD.ipynb - Jupyter notebook to work on Google Colab
   │
-  ├── data/
-  │   └── data.txt  - datasets descriptions and download link
+  ├── data/  - Data folder
+  │   ├── data_descriptions.txt
+  │   └── ...
   │
-  ├── models/ - Models defining and training
+  ├── models/  - Models defining and training
   │   └── Autoencoders/
   │       └── DCAE.py
   │   └── Latent Variable models/
   │       └── VAE.py
   │
-  ├── saved/  - saving folder
+  ├── saved/  - Saving folder
+  │   └── ...
   │
-  └── scripts/ - utility scripts for evaluation and adversarial crafting
+  └── scripts/  - Utility scripts for evaluation and adversarial crafting
       ├── adversarial_crafting.py
       ├── eval_brats.py
       ├── eval_mslub.py
