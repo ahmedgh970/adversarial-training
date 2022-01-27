@@ -93,7 +93,7 @@ For more details about the unsupervised anomaly segmentation method, you can fin
 ```
 
 
-For more details about the adversarial training method, you can read the paper on [ARAE: Adversarially robust training of autoencoders improves novelty detection](https://www.sciencedirect.com/science/article/pii/S0893608021003646).
+For more details about the adversarial training procedure, you can read the paper on [ARAE: Adversarially robust training of autoencoders improves novelty detection](https://www.sciencedirect.com/science/article/pii/S0893608021003646).
 ```
 @article{salehi2021arae,
   title={Arae: Adversarially robust training of autoencoders improves novelty detection},
