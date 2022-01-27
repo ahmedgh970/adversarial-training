@@ -13,9 +13,15 @@ warnings.filterwarnings('ignore')
 
 
 # Load my train and validation sets with labels
-x_train = np.load('./data/OASIS/healthy_oasis/x_train.npy')
-y_train = np.load('./data/OASIS/healthy_oasis/y_train.npy')
+x_train = np.load('./data/OASIS/healthy_oasis/*.npy')
+y_train = np.load('./data/OASIS/healthy_oasis/*.npy')
 
+'''
+The labels are calculated according to the mean intensity per train sample
+classe 0 (5601 samples) => [0, 0.0475[
+classe 1 (5647 samples) => [0.0475, 0.1300[
+classe 3 (5648 samples) => [0.1300, inf[
+'''
 
 # All data shape: (H=256, W=256, C=1)
 
