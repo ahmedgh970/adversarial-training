@@ -13,10 +13,9 @@ warnings.filterwarnings('ignore')
 
 
 # Load my train and validation sets with labels
-x_train = np.load('./OASIS/healthy_oasis/x_train.npy')
-y_train = np.load('./OASIS/healthy_oasis/y_train.npy')
+x_train = np.load('./data/OASIS/healthy_oasis/x_train.npy')
+y_train = np.load('./data/OASIS/healthy_oasis/y_train.npy')
 
-x_train_adv = np.load('./OASIS/adv_oasis/x_train_adv.npy')
 
 # All data shape: (H=256, W=256, C=1)
 
@@ -77,7 +76,7 @@ attack = ProjectedGradientDescent(classifier,
 
 # Generate adv examples
 x_train_adv = attack.generate(x_train)
-np.save('./saved/ResNet50/adv_data/x_train_adv.npy', x_train_adv)
+np.save('./data/OASIS/adv_oasis/x_train_adv.npy', x_train_adv)
 
 
 # Evaluate on adversarial train data
