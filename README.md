@@ -2,7 +2,7 @@
 
 This repo contains a method to adversarially train Autoencoders (AEs) (Dense AE and Variational AE) for unsupervised anomaly segmentation task on brain MR Images.
 
-* [Autoencoders_Adversarial_Training_UAD](#Autoencoders_Adversarial_Training_UAD)
+* [adversarial-training](#adversarial-training)
   * [Requirements](#requirements)
   * [Folder Structure](#folder-structure)
   * [Usage](#usage)
@@ -21,7 +21,7 @@ This repo contains a method to adversarially train Autoencoders (AEs) (Dense AE 
 ## Requirements
 * <code>Python >= 3.6</code>
 
-All packages used in this repository are listed in [requirements.txt](https://github.com/ahmedgh970/Autoencoders_Adversarial_Training_UAD/requirements.txt).
+All packages used in this repository are listed in [requirements.txt](https://github.com/ahmedgh970/adversarial-training/requirements.txt).
 To install those, run:
 ```
 pip3 install -r requirements.txt
@@ -29,23 +29,12 @@ pip3 install -r requirements.txt
 
 ## Folder Structure
   ```
-  Autoencoders_Adversarial_Training_UAD/
-  │
-  ├── Autoencoders_Adversarial_Training_UAD.ipynb - Jupyter notebook to work on Google Colab
-  │
-  ├── data/  - Data folder
-  │   ├── data_descriptions.txt
-  │   └── ...
-  │
+  adversarial-training/
   ├── models/  - Models defining and training
   │   └── Autoencoders/
   │       └── DCAE.py
   │   └── Latent Variable models/
   │       └── VAE.py
-  │
-  ├── saved/  - Saving folder
-  │   └── ...
-  │
   └── scripts/  - Utility scripts for evaluation and adversarial crafting
       ├── adversarial_crafting.py
       ├── eval_brats.py
@@ -58,11 +47,6 @@ pip3 install -r requirements.txt
 ## Usage
 ### CLI Usage
 Every model can be trained and evaluated individually using the scripts which are provided in the `models/*` and `scripts/*` folders.
-
-### Google Colab Usage
-Training can be started by importing `Autoencoders_Adversarial_Training_UAD.ipynb` in [Google Colab](http://colab.research.google.com).
-This github repository is linked and can directly loaded into the notebook. However, the datasets have to be stored so that Google Colab can access them. 
-Either uploading by a zip-file or uploading it to Google Drive and mounting the drive.
 
 ## Adversarial Robustness Toolbox Installation
 The most recent version of ART can be downloaded or cloned from this repository:
